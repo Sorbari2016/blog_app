@@ -1,4 +1,4 @@
-# Blog Web Project
+# Blog Web App Project
 
 ## Description
 - In this project I am task to build my first blog web app.
