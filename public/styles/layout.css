@@ -1,0 +1,40 @@
+
+main {
+  position: absolute;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  grid-template-rows: 1fr 4fr 1fr;
+}
+
+ul, #form-buttons {
+    gap: 7rem;
+}
+
+ul li {
+    list-style-type: none;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+}
+
+
+.flex-item {
+  display: flex;
+}
+
+
+img {
+  width: 50px; 
+  height: 50px;
+}
+
+img[alt='search icon'] {
+  width: 1.2rem; 
+  height: 1.2rem; 
+}
+
