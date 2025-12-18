@@ -1,12 +1,15 @@
 
+* {
+  padding: 0; 
+  margin: 0;
+  box-sizing: border-box;
+}
+
 .main-container {
   display: grid;
   grid-template-columns: 1fr 5fr;
 }
 
-ul, #form-buttons {
-    gap: 7rem;
-}
 
 ul li {
     list-style-type: none;
@@ -14,6 +17,10 @@ ul li {
 
 
 .flex-item { display: flex;}
+
+a {
+  text-decoration: none;
+}
 
 a.logo-link {
   display: flex;
@@ -26,7 +33,7 @@ a.logo-link {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px;
+  padding: 1rem; 
 }
 
 #form-buttons {
@@ -50,13 +57,15 @@ input[type="search"] {
   border-radius: 5px;
 }
 
-
 footer {
   justify-content: space-between;
 }
 
 .left-footer {justify-self: self-start;}
 
+button {
+  cursor: pointer;
+}
 
 img {
   width: 50px; 
@@ -70,6 +79,33 @@ img[alt='search icon'] {
 
 aside {
   background-color: yellow;
+  padding: 1rem;
+}
+
+.main-sidebar {
+  margin-bottom: 2rem;
+}
+
+.icon {
+  padding-bottom: 1.5rem;
+}
+
+.add-btn {
+  padding: 5px;
+  width: 100px;
+  border-radius: 10px;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  gap: 5px; 
+}
+
+.icon img, 
+.add-btn img {
+  height: 25px;
+  width: 25px;
 }
 
 main {background-color: blue;}
