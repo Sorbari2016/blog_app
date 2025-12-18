@@ -22,10 +22,32 @@ a.logo-link {
   gap: 5px; 
 }
 
- nav .nav-items {
+ .nav-items {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 10px;
+}
+
+#form-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+#form-buttons button {
+  padding: 10px;
+  border-radius: 10px;
+  border: 0;
+}
+
+#search-box {
+  display: flex;
+  align-items: center;
+}
+
+input[type="search"] {
+  padding: 5px;
+  border-radius: 5px;
 }
 
 
