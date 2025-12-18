@@ -7,17 +7,117 @@
 </head>
 <body>
     <div class="container">
-      <!-- Sidebar -->
-      <aside class="sidebar">
-        <%- include('partials/sidebar') %>
-        </aside>
-    <!-- Header -->
-        <%- include('partials/header') %>
+      <!-- Header -->
+      <%- include('partials/header') %>
 
-        <!-- Main content (each page injects here) -->
-        <main>
-          <% %>
-        </main>
+      <!-- Sidebar -->
+      <div class="main-container">
+        <aside class="sidebar">
+          <%- include('partials/sidebar') %>
+        </aside>
+          <!-- Main content (each page injects here) -->
+          <main id="main-content">
+            <header class="dashboard-header">
+              <div>
+                  <p>Hello <strong>username</strong> or anonymous</p>
+                  <p class="muted">All articles written by user, from latest to oldest</p>
+              </div>
+              <%
+              const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+              const months = [
+                'January',
+                "February",
+                "March",
+                "April",
+                "May",
+                "June",
+                "July",
+                "August",
+                "September",
+                "October",
+                "November",
+                "December"
+              ]
+              const now = new Date();
+              const todayDate = `${now.getFullYear()}-${now.getMonth() + 1}-${now.getDate()}`
+              const today = days[now.getDay()]
+              const todayString = `${now.getDate()} ${months[now.getMonth()]}, ${now.getFullYear()}`
+              %>
+              <time datetime="<%= todayDate %>">
+              <%=today  %>
+              <br>
+              <%=todayString %>
+              </time>
+            </header>
+            <section class="articles-overview">
+              <h2 class="sr-only">Your articles</h2>
+
+              <div class="article-list">
+                <article class="article-card">
+                  <h3>Title of article</h3>
+                  <p>Number of words</p>
+
+                  <button aria-label="Article options">⋯</button>
+                </article>
+                <article class="article-card">
+                  <h3>Title of article</h3>
+                  <p>Number of words</p>
+                  <button aria-label="Article options">⋯</button>
+                </article>
+
+                <button class="next-button" aria-label="Next articles">
+                    &gt;
+                </button>
+              </div>
+            </section>
+            <section class="cta-write">
+              <h2>Ready to write some stories today?</h2>
+              <button class="primary">
+              Write a story
+              </button>
+              <p class="muted">
+                Background picture of someone writing or pencil
+              </p>
+            </section>
+            <section class="featured-articles">
+              <h2>Featured articles</h2>
+
+              <article class="featured-card">
+                <header>
+                  <p class="username">username</p>
+                  <h3>Article title</h3>
+                </header>
+                <main>
+
+                </main>
+                <footer>
+                    <button aria-label="Edit article">✏️</button>
+                    <button aria-label="Delete article">🗑</button>
+                    <time datetime="2025-08-24" class="updated">
+                      Last updated
+                    </time>
+                </footer>
+              </article>
+            </section>
+            <section class="featured-articles">
+              <h2>Featured articles</h2>
+              <article class="featured-card">
+                 <header>
+                  <p class="username">username</p>
+                  <h3>Article title</h3>
+                </header>
+                <main></main>
+                <footer>
+                  <button aria-label="Edit article">✏️</button>
+                  <button aria-label="Delete article">🗑</button>
+                  <time datetime="2025-08-24" class="updated">
+                    Last updated
+                  </time>
+                </footer>
+              </article>
+            </section>
+          </main>
+      </div>
 
       <!-- Footer -->
         <%- include('partials/footer') %>

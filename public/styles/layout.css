@@ -1,9 +1,5 @@
 
-/* main {
-  position: absolute;
-} */
-
-.container {
+.main-container {
   display: grid;
   grid-template-columns: 1fr 5fr;
 }
@@ -18,6 +14,20 @@ ul li {
 
 
 .flex-item { display: flex;}
+
+a.logo-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px; 
+}
+
+ nav .nav-items {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 
 footer {
   justify-content: space-between;
@@ -39,3 +49,5 @@ img[alt='search icon'] {
 aside {
   background-color: yellow;
 }
+
+main {background-color: blue;}
