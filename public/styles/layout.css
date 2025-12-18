@@ -1,12 +1,11 @@
 
-main {
+/* main {
   position: absolute;
-}
+} */
 
 .container {
   display: grid;
   grid-template-columns: 1fr 5fr;
-  grid-template-rows: 1fr 4fr 1fr;
 }
 
 ul, #form-buttons {
@@ -17,15 +16,14 @@ ul li {
     list-style-type: none;
 }
 
+
+.flex-item { display: flex;}
+
 footer {
-  position: absolute;
-  bottom: 0;
+  justify-content: space-between;
 }
 
-
-.flex-item {
-  display: flex;
-}
+.left-footer {justify-self: self-start;}
 
 
 img {
@@ -38,3 +36,6 @@ img[alt='search icon'] {
   height: 1.2rem; 
 }
 
+aside {
+  background-color: yellow;
+}
