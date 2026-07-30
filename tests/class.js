@@ -79,6 +79,11 @@ class ArticleManager {
   getTotalArticles() {
     return this.articles.length;
   }
+
+  // create method to get all articles
+  getArticles() {
+    return this.articles;
+  }
 }
 
 export { Article, ArticleManager };

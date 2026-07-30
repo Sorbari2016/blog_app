@@ -71,7 +71,7 @@
             <section class="cta-write">
               <h2>Ready to write some stories today?</h2>
               <button class="primary">
-              Write a story
+               <a href="/articles">Write a story</a>
               </button>
               <p class="muted">
                 Background picture of someone writing or pencil
@@ -88,8 +88,13 @@
                     <p><%=article.content %></p>
                 </main>
                 <footer>
-                    <button aria-label="Edit article">✏️</button>
-                    <button aria-label="Delete article">🗑</button>
+                    <button aria-label="Edit article">
+                      <a href="/articles/<%=article.id %>">🖉</a>
+                    </button>
+                    <form action="/articles/<%=article.id %>">
+                        <button aria-label="Delete article">🗑
+                        </button>
+                    </form>
                     <time datetime="<%=article.updatedAt %>" class="updated">
                       <%=article.getDetails().updatedAt %>
                     </time>
