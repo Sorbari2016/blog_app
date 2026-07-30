@@ -61,7 +61,9 @@ footer {
   justify-content: space-between;
 }
 
-.left-footer {justify-self: self-start;}
+.left-footer {
+  justify-content: space-around;
+}
 
 button {
   cursor: pointer;
@@ -108,4 +110,12 @@ aside {
   width: 25px;
 }
 
+.main-footer {
+  padding: 1rem;
+  align-items: center;
+}
+
+
 main {background-color: blue;}
+
+
