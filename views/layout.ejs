@@ -49,27 +49,25 @@
               <%=todayString %>
               </time>
             </header>
-            <section class="articles-overview">
-              <h2 class="sr-only">Your articles</h2>
+            <% if (locals.articles && locals.articles.length > 0) { %> 
+               <% articles.forEach(article => { %> 
+                <section class="articles-overview">
+                   <h2 class="sr-only">Your articles</h2>
 
-              <div class="article-list">
-                <article class="article-card">
-                  <h3>Title of article</h3>
-                  <p>Number of words</p>
+                   <div class="article-list">
+                      <article class="article-card">
+                        <h3><%= article.title %></h3>
+                        <small><%= article.content.length %></small>
+                        <p><%=article.content %></p>
+                        <button aria-label="Article options">⋯</button>
+                      </article>
+                   </div>
+                </section>
+                <% }); %>
+            <% }  else { %> 
+                <p>No Articles yet...</p>
+            <% }%>
 
-                  <button aria-label="Article options">⋯</button>
-                </article>
-                <article class="article-card">
-                  <h3>Title of article</h3>
-                  <p>Number of words</p>
-                  <button aria-label="Article options">⋯</button>
-                </article>
-
-                <button class="next-button" aria-label="Next articles">
-                    &gt;
-                </button>
-              </div>
-            </section>
             <section class="cta-write">
               <h2>Ready to write some stories today?</h2>
               <button class="primary">
@@ -81,40 +79,23 @@
             </section>
             <section class="featured-articles">
               <h2>Featured articles</h2>
-
+            <% features.forEach(article => { %>
               <article class="featured-card">
                 <header>
-                  <p class="username">username</p>
-                  <h3>Article title</h3>
+                  <h3><%=article.title %> </h3>
                 </header>
                 <main>
-
+                    <p><%=article.content %></p>
                 </main>
                 <footer>
                     <button aria-label="Edit article">✏️</button>
                     <button aria-label="Delete article">🗑</button>
-                    <time datetime="2025-08-24" class="updated">
-                      Last updated
+                    <time datetime="<%=article.updatedAt %>" class="updated">
+                      <%=article.getDetails().updatedAt %>
                     </time>
                 </footer>
               </article>
-            </section>
-            <section class="featured-articles">
-              <h2>Featured articles</h2>
-              <article class="featured-card">
-                 <header>
-                  <p class="username">username</p>
-                  <h3>Article title</h3>
-                </header>
-                <main></main>
-                <footer>
-                  <button aria-label="Edit article">✏️</button>
-                  <button aria-label="Delete article">🗑</button>
-                  <time datetime="2025-08-24" class="updated">
-                    Last updated
-                  </time>
-                </footer>
-              </article>
+           <%  }); %>
             </section>
           </main>
       </div>
