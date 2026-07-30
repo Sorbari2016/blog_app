@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>New Article</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <form action="/articles" method="post">
+      <h2>Write A New Article</h2>
+      <div class="form-item">
+        <label for="title"
+          ><span>* </span>Title
+          <input type="text" id="title" name="title" required />
+        </label>
+      </div>
+      <div class="form-item">
+        <label for="content"
+          ><span>* </span>Content
+          <textarea name="content" id="content" required></textarea>
+        </label>
+      </div>
+      <div class="error-message">
+        <small><%=message %></small>
+      </div>
+      <div class="form-actions">
+        <a href="/" class="cancel-btn">Go back</a>
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+  </body>
+</html>
