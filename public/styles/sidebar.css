@@ -1,0 +1,127 @@
+/* SIDEBAR RULES */
+.sidebar {
+  width: 220px;
+  min-width: 220px;
+  background-color: var(--bg-surface);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  padding: 1.25rem 0.75rem;
+}
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.main-sidebar ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  align-items: flex-start;
+}
+
+.main-sidebar .icon a {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.65rem 0.9rem;
+  border-radius: var(--radius);
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  transition:
+    background 0.15s ease,
+    color 0.15s ease;
+}
+
+.main-sidebar .icon a:hover,
+.main-sidebar .icon a.active {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+.main-sidebar .icon img {
+  width: 20px;
+  height: 20px;
+  opacity: 0.85;
+}
+
+.bottom-sidebar {
+  margin-top: auto;
+  padding-top: 1rem;
+}
+
+.add-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.7rem;
+  background: var(--accent);
+  color: #fff;
+  border-radius: var(--radius);
+  font-weight: 500;
+  transition: background 0.15s ease;
+}
+
+.add-btn:hover {
+  background: var(--accent-hover);
+}
+
+.add-btn img {
+  width: 18px;
+  height: 18px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .sidebar {
+    width: 70px;
+    min-width: 70px;
+    padding: 1rem 0.4rem;
+  }
+
+  .main-sidebar .icon a {
+    justify-content: center;
+    padding: 0.75rem;
+  }
+
+  .main-sidebar .icon a span,
+  .main-sidebar .icon a {
+    font-size: 0;
+  }
+
+  .main-sidebar .icon img {
+    margin: 0;
+  }
+
+  .add-btn {
+    padding: 0.75rem;
+  }
+
+  .add-btn a {
+    font-size: 0;
+  }
+
+  #main-content {
+    padding: 1.25rem 1rem;
+  }
+
+  #search-box {
+    min-width: 180px;
+  }
+}
+
+@media (max-width: 640px) {
+  .main-footer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .left-footer {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}

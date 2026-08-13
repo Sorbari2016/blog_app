@@ -4,6 +4,10 @@
   <title>Blog App Project</title>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="/styles/layout.css">
+  <link rel="stylesheet" href="/styles/header.css">
+  <link rel="stylesheet" href="/styles/main.css">
+  <link rel="stylesheet" href="/styles/sidebar.css">
+  <link rel="stylesheet" href="/styles/footer.css">
 </head>
 <body>
     <div class="container">
@@ -49,24 +53,6 @@
               <%=todayString %>
               </time>
             </header>
-            <% if (locals.articles && locals.articles.length > 0) { %>  
-                <section class="articles-overview">
-                   <h2 class="sr-only">Your articles</h2>
-                  <% articles.forEach(article => { %>
-                   <div class="article-list">
-                      <article class="article-card">
-                        <h3><%= article.title %></h3>
-                        <small><%= article.content.length %></small>
-                        <p><%=article.content %></p>
-                        <button aria-label="Article options">⋯</button>
-                      </article>
-                   </div>
-                </section>
-                <% }); %>
-            <% }  else { %> 
-                <p>No Articles yet...</p>
-            <% }%>
-
             <section class="cta-write">
               <h2>Ready to write some stories today?</h2>
               <button class="primary">
@@ -76,6 +62,23 @@
                 Background picture of someone writing or pencil
               </p>
             </section>
+            <% if (locals.articles && locals.articles.length > 0) { %>  
+                <section class="articles-overview">
+                   <h2 class="sr-only">Your articles</h2>
+                  <% articles.forEach(article => { %>
+                   <div class="article-list">
+                      <article class="article-card">
+                        <h3><%= article.title %></h3>
+                        <small><%= article.content.length %> words</small>
+                        <p><%=article.content %></p>
+                        <button aria-label="Article options">⋯</button>
+                      </article>
+                   </div>
+                <% }); %>
+                </section>
+            <% }  else { %> 
+                <p>No Articles yet...</p>
+            <% }%>
             <section class="featured-articles">
               <h2>Featured articles</h2>
             <% features.forEach(article => { %>
