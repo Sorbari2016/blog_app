@@ -24,6 +24,10 @@ app.get("/", (req, res) => {
     (article) => !features.includes(article),
   );
 
+  // res.locals is an object attached to the response object
+  // It is the data that you want to make available to the template being rendered for this request.
+  res.locals.title = "Home page";
+
   res.render("layout.ejs", {
     features: features,
     articles: others,
@@ -32,6 +36,9 @@ app.get("/", (req, res) => {
 
 // Create method to get new article form
 app.get("/articles", (req, res) => {
+  // It is called locals, because the values are local to the current req/res cycle
+  // res.locals is primarily intended for request-scoped data.
+  res.locals.title = "New Article";
   res.render("pages/new-article", { message: "" });
 });
 
@@ -40,6 +47,10 @@ app.get("/articles/:id/edit", (req, res) => {
   const articleId = parseInt(req.params.id);
   try {
     const article = allArticles.getArticleById(articleId);
+
+    // res.render(), res.locals represent 2 ways of passing data to a template
+    // It is also different from app.locals whose values can be shared betweend different req/res cirles
+    res.locals.title = "Edit Article";
 
     res.render("pages/edit-article", { message: " ", article });
   } catch (err) {
