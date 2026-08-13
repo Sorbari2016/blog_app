@@ -22,3 +22,19 @@
 - Embedded JS.
 
 ## Blog Design
+
+### Homepage
+
+![Blog app homepage](https://github.com/Sorbari2016/blog_app/blob/main/public/assets/images/blog_app_home.png)
+
+### Featured Articles
+
+![Blog app featured articles](https://github.com/Sorbari2016/blog_app/blob/main/public/assets/images/blog_app_feature_articles.png)
+
+### New Article
+
+![Blog app new article](https://github.com/Sorbari2016/blog_app/blob/main/public/assets/images/blog_app_new_article.png)
+
+### Edit Article
+
+![Blog app edit article](https://github.com/Sorbari2016/blog_app/blob/main/public/assets/images/blog_app_edit_article.png)
