@@ -6,16 +6,6 @@ class Article {
       (this.content = content),
       (this.updatedAt = new Date()));
   }
-
-  getDetails() {
-    return {
-      id: this.id,
-      createdAt: this.createdAt.toDateString(),
-      title: this.title,
-      content: this.content,
-      updatedAt: this.updatedAt.toDateString(),
-    };
-  }
 }
 
 class ArticleManager {
@@ -24,6 +14,8 @@ class ArticleManager {
   }
 
   // article methods
+
+  // add a new article
   addArticle(title, content) {
     const articles = this.articles;
 
@@ -42,45 +34,52 @@ class ArticleManager {
     return newArticle;
   }
 
+  // get an article by its id
   getArticleById(id) {
     return this.articles.find((piece) => piece.id === id) || null;
   }
 
-  updateArticle(id, newTitle, newContent, updatedAt) {
+  // update an article
+  updateArticle(id, newTitle, newContent) {
     // check if article exists
-    const article = this.getArticleById(id);
+    const articleIndex = this.articles.findIndex((piece) => piece.id === id);
 
-    if (!article) {
+    if (articleIndex === -1) {
       throw new Error("Article not found!");
     }
 
-    const updatedArticle = {
-      id: article.id,
-      createdAt: article.createdAt,
-      title: newTitle || article.title,
-      content: newContent || article.content,
+    const update = {
+      title: newTitle,
+      content: newContent,
       updatedAt: new Date(),
     };
 
-    return updatedArticle;
+    const articles = this.articles;
+    articles[articleIndex] = {
+      ...articles[articleIndex],
+      ...update,
+    };
+
+    return articles[articleIndex];
   }
 
+  // delete an article
   deleteArticle(id) {
     const articleIndex = this.articles.findIndex((piece) => piece.id === id);
 
-    if (!articleIndex === -1) {
+    if (articleIndex === -1) {
       throw new Error("Article not found!");
     }
 
-    // remove article
     this.articles.splice(articleIndex, 1);
   }
 
+  // get the total number of articles
   getTotalArticles() {
     return this.articles.length;
   }
 
-  // create method to get all articles
+  // get all articles
   getArticles() {
     return this.articles;
   }

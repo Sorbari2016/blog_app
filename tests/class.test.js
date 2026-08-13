@@ -18,10 +18,6 @@ describe("Article class tests", () => {
     expect(article.createdAt).toBeInstanceOf(Date);
     expect(article.updatedAt.getHours()).toEqual(new Date().getHours());
   });
-
-  test("getDetails should return an obj", () => {
-    expect(article.getDetails()).toBeInstanceOf(Object);
-  });
 });
 
 describe("Article Manager test", () => {

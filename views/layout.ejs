@@ -49,11 +49,10 @@
               <%=todayString %>
               </time>
             </header>
-            <% if (locals.articles && locals.articles.length > 0) { %> 
-               <% articles.forEach(article => { %> 
+            <% if (locals.articles && locals.articles.length > 0) { %>  
                 <section class="articles-overview">
                    <h2 class="sr-only">Your articles</h2>
-
+                  <% articles.forEach(article => { %>
                    <div class="article-list">
                       <article class="article-card">
                         <h3><%= article.title %></h3>
@@ -89,14 +88,14 @@
                 </main>
                 <footer>
                     <button aria-label="Edit article">
-                      <a href="/articles/<%=article.id %>">🖉</a>
+                      <a href="/articles/<%=article.id %>/edit">🖉</a>
                     </button>
-                    <form action="/articles/<%=article.id %>">
+                    <form action="/articles/<%=article.id %>/delete">
                         <button aria-label="Delete article">🗑
                         </button>
                     </form>
                     <time datetime="<%=article.updatedAt %>" class="updated">
-                      <%=article.getDetails().updatedAt %>
+                      <%=article.updatedAt.toDateString() %>
                     </time>
                 </footer>
               </article>
