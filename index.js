@@ -99,4 +99,17 @@ app.post("/articles/:id/edit", (req, res) => {
   }
 });
 
+// Create method to delete an article
+app.post("/articles/:id/delete", (req, res) => {
+  const articleId = parseInt(req.params.id);
+  console.log(articleId);
+
+  try {
+    allArticles.deleteArticle(articleId);
+    res.redirect("/");
+  } catch (err) {
+    console.error("Failed to delete article", err);
+  }
+});
+
 app.listen(PORT, () => console.log(`serving is running on port: ${PORT}.`));
